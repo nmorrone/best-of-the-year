@@ -1,6 +1,5 @@
 package it.org.lessons.spring.model;
 
-import java.util.Random;
 
 public class Movie {
 
@@ -8,10 +7,10 @@ public class Movie {
 	private String titolo;
 	
 	
-	Movie(String m){
+	public Movie(int i, String m){
 		
 		this.titolo = m;
-		setId();
+		this.id = i;
 	}
 	
 	public void setTitolo(String a) {
@@ -22,9 +21,8 @@ public class Movie {
 		return this.titolo;
 	}
 	
-	public void setId() {
-		Random code = new Random();
-		this.id = code.nextInt(1 + 100000);
+	public void setId(int n) {
+		this.id = n;
 	}
 	
 	public int getId() {

@@ -1,6 +1,5 @@
 package it.org.lessons.spring.model;
 
-import java.util.Random;
 
 public class Song {
 
@@ -9,15 +8,14 @@ public class Song {
 	private String titolo;
 	
 	
-	public Song(String s) {
-		setId();
+	public Song(int i, String s) {
+		this.id = i;
 		this.titolo = s;
 	}
 	
 	
-	public void setId() {
-		Random code = new Random();
-		this.id = code.nextInt(1 + 100000);
+	public void setId(int n) {
+		this.id = n;
 	}
 	public int getId() {
 		return this.id;
