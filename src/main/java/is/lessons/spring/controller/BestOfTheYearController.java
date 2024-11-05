@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -62,12 +63,9 @@ public class BestOfTheYearController {
 		return "songs";
 	}
 
-	
-	
-	
 	// Mapping ricerca film nella lista
-	@GetMapping("/movies/ricerca")
-	public String idMovie(@RequestParam(name = "id", required = false) String id, Model model) {
+	@GetMapping("/movies/{id}")
+	public String idMovie(@PathVariable String id, Model model) {
 		List<Movie> bestMovies = getBestMovies();
 		int a = Integer.parseInt(id);
 		if (a != 0) {
@@ -87,6 +85,30 @@ public class BestOfTheYearController {
 		model.addAttribute("movies", bestMovies);
 
 		return "bestmovies";
+	}
+
+	// Mapping ricerca film nella lista
+	@GetMapping("/songs/{id}")
+	public String idSong(@PathVariable String id, Model model) {
+		List<Song> bestSongs = getBestSongs();
+		int a = Integer.parseInt(id);
+		if (a != 0) {
+			List<Song> canzoneSelezionata = new ArrayList<>();
+			for (Song s : bestSongs) {
+
+				if (s.getId() == a) {
+
+					canzoneSelezionata.add(s);
+				}
+			}
+
+			bestSongs = canzoneSelezionata;
+
+		}
+
+		model.addAttribute("songs", bestSongs);
+
+		return "songs";
 	}
 
 }
