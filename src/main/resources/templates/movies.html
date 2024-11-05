@@ -20,7 +20,7 @@
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-lg-9 text-center">
-					<h3 class="pb-3">Ecco i Migliori Film!</h3>
+					<h3 class="pb-3">Ecco la Lista dei Film!</h3>
 					<h6 class="pb-3" th:if="${id} != null" th:text="'Risultati per il filtro '+ ${id}" />
 					<ul class="list-group list-group-flush">
 						<li class="list-group-item" th:each="Movie: ${movies}" th:text="${Movie.titolo}"></li>

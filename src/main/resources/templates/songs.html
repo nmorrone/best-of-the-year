@@ -20,7 +20,8 @@
 		<div class="container">
 					<div class="row justify-content-center">
 						<div class="col-lg-9 text-center">
-							<h3 class="pb-3">Ecco le Migliori Canzoni</h3>
+							<h3 class="pb-3">Ecco la Lista delle Canzoni!</h3>
+							<h6 class="pb-3" th:if="${id} != null" th:text="'Risultati per il filtro '+ ${id}" />
 							<ul class="list-group list-group-flush">
 								<li class="list-group-item" th:each="Song: ${songs}" th:text="${Song.titolo}"></li>
 							</ul>
