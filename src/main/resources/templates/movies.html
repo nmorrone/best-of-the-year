@@ -12,10 +12,8 @@
 
 <body>
 	<!-- Bootstrap Bundle with Popper -->
-			<script th:src="@{/webjars/bootstrap/5.1.3/js/bootstrap.bundle.min.js}"></script>
-	<header class="bg-dark p-3">
-		<h6 style="text-align: center; color: white; font-family: monospace">Spring - Best Movies of the Year</h6>
-	</header>
+	<script th:src="@{/webjars/bootstrap/5.1.3/js/bootstrap.bundle.min.js}"></script>
+	<header th:insert="~{fragments :: header(movies)}"></header>
 	<section class="content pt-5">
 		<div class="container">
 			<div class="row justify-content-center">
@@ -23,7 +21,7 @@
 					<h3 class="pb-3">Ecco la Lista dei Film!</h3>
 					<h6 class="pb-3" th:if="${id} != null" th:text="'Risultati per il filtro '+ ${id}" />
 					<ul class="list-group list-group-flush">
-						<li class="list-group-item" th:each="Movie: ${movies}" th:text="${Movie.titolo}"></li>
+						<li class="list-group-item" th:each="Movie: ${movies}"><a th:href="">[[${Movie.titolo}]]</a></li>
 					</ul>
 				</div>
 			</div>
