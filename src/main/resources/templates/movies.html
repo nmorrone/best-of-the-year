@@ -21,7 +21,7 @@
 					<h3 class="pb-3">Ecco la Lista dei Film!</h3>
 					<h6 class="pb-3" th:if="${id} != null" th:text="'Risultati per il filtro '+ ${id}" />
 					<ul class="list-group list-group-flush">
-						<li class="list-group-item" th:each="Movie: ${movies}"><a th:href="">[[${Movie.titolo}]]</a></li>
+						<li class="list-group-item" th:each="Movie: ${movies}"><a th:href="@{movies}">[[${Movie.titolo}]]</a></li>
 					</ul>
 				</div>
 			</div>
