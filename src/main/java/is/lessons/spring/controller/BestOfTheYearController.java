@@ -41,7 +41,7 @@ public class BestOfTheYearController {
 	public String listMovies(Model model) {
 		List<Movie> bestMovies = getBestMovies();
 		model.addAttribute("movies", bestMovies);
-		return "bestmovies";
+		return "movies";
 	}
 
 	private List<Song> getBestSongs() {
@@ -83,8 +83,9 @@ public class BestOfTheYearController {
 		}
 
 		model.addAttribute("movies", bestMovies);
+		model.addAttribute("filtro", id);
 
-		return "bestmovies";
+		return "movies";
 	}
 
 	// Mapping ricerca film nella lista

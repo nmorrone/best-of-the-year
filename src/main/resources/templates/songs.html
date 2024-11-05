@@ -2,20 +2,19 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-	<title>Index</title>
-	<!-- Required meta tags -->
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
-		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Bootstrap CSS -->
+<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.1.3/css/bootstrap.min.css}"/>
+<title>Best of the Year - Songs</title>
 </head>
 
 <body>
+	<!-- Bootstrap Bundle with Popper -->
+		<script th:src="@{/webjars/bootstrap/5.1.3/js/bootstrap.bundle.min.js}"></script>
 	<header class="bg-dark p-3">
-	    <h4 style="text-align: center; color: white; font-family: monospace">Spring - Best Songs of the Year</h4>
+	    <h6 style="text-align: center; color: white; font-family: monospace">Spring - Best Songs of the Year</h6>
 	</header>
 	<section class="content pt-5">
 		<div class="container">
