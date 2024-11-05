@@ -5,8 +5,6 @@ public class Movie {
 
 	private int id;
 	private String titolo;
-	
-	
 	public Movie(int i, String m){
 		
 		this.titolo = m;

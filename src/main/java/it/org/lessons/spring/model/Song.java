@@ -1,9 +1,7 @@
 package it.org.lessons.spring.model;
 
 
-public class Song {
-
-	
+public class Song {	
 	private int id;
 	private String titolo;
 	
@@ -12,7 +10,6 @@ public class Song {
 		this.id = i;
 		this.titolo = s;
 	}
-	
 	
 	public void setId(int n) {
 		this.id = n;
