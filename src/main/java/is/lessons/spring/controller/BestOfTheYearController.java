@@ -62,4 +62,31 @@ public class BestOfTheYearController {
 		return "songs";
 	}
 
+	
+	
+	
+	// Mapping ricerca film nella lista
+	@GetMapping("/movies/ricerca")
+	public String idMovie(@RequestParam(name = "id", required = false) String id, Model model) {
+		List<Movie> bestMovies = getBestMovies();
+		int a = Integer.parseInt(id);
+		if (a != 0) {
+			List<Movie> filmSelezionati = new ArrayList<>();
+			for (Movie m : bestMovies) {
+
+				if (m.getId() == a) {
+
+					filmSelezionati.add(m);
+				}
+			}
+
+			bestMovies = filmSelezionati;
+
+		}
+
+		model.addAttribute("movies", bestMovies);
+
+		return "bestmovies";
+	}
+
 }
