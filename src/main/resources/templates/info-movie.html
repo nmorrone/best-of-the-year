@@ -18,15 +18,22 @@
 	<header th:insert="~{fragments :: header(movies)}"></header>
 	<section class="content pt-5">
 		<div class="container">
-			<div class="row justify-content-center">
+			<div class="row justify-content-center align-items-center">
 				<div class="col-lg-4">
 					<img class="img-fluid" th:src="@{/img/{id}.jpg(id=${movie.id})}" alt="" style="width: auto;"/>
 				</div>
 				<div class="col-lg-4">
 					<h6>Titolo :</h6>
 					<p>[[${movie.titolo}]]</p>
-					
+					<h6>Regista: </h6>
+					<p>[[${movie.regista}]]</p>
+					<h6>Durata:</h6>
+					<p>[[${movie.durata}]] min</p>
+					<div class="d-grid col-sm-12 col-lg-4">
+					<a th:href="@{'/'}" class="btn btn-dark" role="button">Home</a>
+					</div>
 				</div>
+				
 			</div>
 		</div>
 	</section>
