@@ -7,4 +7,12 @@ Author URI: https://instagram.com/nmorronee
 Version: 0.1
 */
 
+a {
+	text-decoration: none;
+	color: dimgrey;
+}
+
+a:hover {
+	color: darkorange;
+}
 

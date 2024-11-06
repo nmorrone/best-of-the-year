@@ -11,6 +11,10 @@ public class Song {
 		this.titolo = s;
 	}
 	
+	public Song () {
+		
+	}
+	
 	public void setId(int n) {
 		this.id = n;
 	}

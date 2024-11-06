@@ -111,5 +111,51 @@ public class BestOfTheYearController {
 
 		return "songs";
 	}
+	
+	// Mapping pagina dettaglio Film
+		@GetMapping("/movies/info/{id}")
+		public String infoMovie(@PathVariable String id, Model model) {
+			
+			List<Movie> bestMovies = getBestMovies();
+			Movie film = new Movie();
+			int a = Integer.parseInt(id);
+	
+			if (a != 0) {
+				
+				for (Movie m : bestMovies) {
+					if (m.getId() == a) {
+						film = m;
+					}
+				}
+
+			}
+
+			model.addAttribute("movie", film);
+
+			return "info-movie";
+		}
+
+		// Mapping pagina dettaglio Film
+		@GetMapping("/songs/info/{id}")
+		public String infoSong(@PathVariable String id, Model model) {
+			
+			List<Song> bestSongs = getBestSongs();
+			Song canzone = new Song();
+			int a = Integer.parseInt(id);
+
+			if (a != 0) {
+				
+				for (Song s : bestSongs) {
+					if (s.getId() == a) {
+						canzone = s;
+					}
+				}
+
+			}
+
+			model.addAttribute("song", canzone);
+
+			return "info-song";
+		}
 
 }
