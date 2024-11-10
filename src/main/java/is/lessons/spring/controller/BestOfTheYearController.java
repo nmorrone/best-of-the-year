@@ -76,15 +76,16 @@ public class BestOfTheYearController {
 
 					filmSelezionati.add(m);
 				}
+		
 			}
 
 			bestMovies = filmSelezionati;
+
 
 		}
 
 		model.addAttribute("movies", bestMovies);
 		model.addAttribute("filtro", id);
-
 		return "movies";
 	}
 
@@ -157,5 +158,6 @@ public class BestOfTheYearController {
 
 			return "info-song";
 		}
+
 
 }
